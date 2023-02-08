@@ -72,7 +72,7 @@ public class StudentService {
 	 * @return l'objecte Student guardat a la base de dades
 	 */
 	public void deleteStudentById(Integer id) {
-		//TODO
+		this.studentRepository.deleteById(id);
 	}
 	
 	

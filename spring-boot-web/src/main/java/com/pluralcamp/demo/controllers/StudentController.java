@@ -61,19 +61,13 @@ public class StudentController {
 		Mono<String> response = this.webClient.delete()
 				.uri("/student/delete/id/" + id)
 				.retrieve()
-				.bodyToMono(String.class);
+				.bodyToMono(String.class);		
 		String message = response.block(); //Uncomment - do not modify
 		model.addAttribute("message", message); //Uncomment - do not modify
 		return this.getStudents(model); //DO NOT MODIFY THIS LINE !!
 	}	
 	
 }
-
-
-
-
-
-
 
 
 

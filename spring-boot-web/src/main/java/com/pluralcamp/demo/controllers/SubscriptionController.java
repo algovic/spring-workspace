@@ -29,7 +29,7 @@ public class SubscriptionController {
 	public String mainWithParam(
 			@RequestParam(name = "email", required = false, defaultValue = "") 
 			String email, Model model) {
-		if(email.equals("Direccion de correo no indicada. Por favor intente de nuevo. Gracias.")) {
+		if(email.equals("Dirección de correo no indicada. Por favor intente de nuevo. Gracias.")) {
 			model.addAttribute("email", this.email);
 		}else {
 			model.addAttribute("email", email);
