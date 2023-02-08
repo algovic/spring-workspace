@@ -1,4 +1,3 @@
-
 package com.pluralcamp.demo.model;
 
 public class Student {

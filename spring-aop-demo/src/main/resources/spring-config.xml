@@ -13,8 +13,8 @@
           http://www.springframework.org/schema/context/spring-context-4.2.xsd
           http://www.springframework.org/schema/aop
           http://www.springframework.org/schema/aop/spring-aop.xsd">
-	<bean id="purchase" class="com.pluralcamp.aspects.xml.Purchase"></bean>
 
+	<bean id="purchase" class="com.pluralcamp.aspects.xml.Purchase"></bean>
 	<bean id="itemsValidator"
 		class="com.pluralcamp.aspects.xml.ItemsValidator"></bean>
 
@@ -23,13 +23,13 @@
 			<aop:pointcut
 				expression="execution (* com.pluralcamp.aspects.xml.Purchase.buy(..))"
 				id="buyPointCut" />
-			<aop:before pointcut-ref="buyPointCut" method="checkAmount"></aop:before>
+			<aop:before pointcut-ref="buyPointCut"
+				method="checkAmount" />
 			<aop:after-returning pointcut-ref="buyPointCut"
-				method="pack"></aop:after-returning>
+				method="pack" />
 			<aop:after-throwing pointcut-ref="buyPointCut"
-				method="fileComplain"></aop:after-throwing>
+				method="fileComplain" />
 		</aop:aspect>
-
 	</aop:config>
 
 </beans>

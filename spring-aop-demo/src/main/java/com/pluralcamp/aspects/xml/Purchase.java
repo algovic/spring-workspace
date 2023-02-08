@@ -1,6 +1,7 @@
 package com.pluralcamp.aspects.xml;
 
-public class Purchase extends Shopping{
+public class Purchase extends Shopping {
+
 	@Override
 	public void buy(boolean error) throws Exception {
 		if(error)

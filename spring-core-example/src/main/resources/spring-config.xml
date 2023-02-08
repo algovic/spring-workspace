@@ -25,15 +25,18 @@
 		<property name="id" value="1"></property>
 		<property name="name" value="Laura"></property>
 		<property name="surname" value="Queralt"></property>
-		<property name="address" value="Calle Major"></property>
+		<property name="address" value="Carrer Major"></property>
 	</bean>
-	
+
 	<bean id="studentConst"
 		class="com.pluralcamp.presentation.entity.Student">
-		<constructor-arg index="0" value="2" type="int"/>
-		<constructor-arg index="1" value="Laurita" type="java.lang.String"/>
-		<constructor-arg index="2" value="Queralt" type="java.lang.String"/>
-		<constructor-arg index="3" value="calle major 12" type="java.lang.String"/>
+		<constructor-arg index="0" value="2" type="int" />
+		<constructor-arg index="1" value="Anna"
+			type="java.lang.String" />
+		<constructor-arg index="2" value="Queralt"
+			type="java.lang.String" />
+		<constructor-arg index="3" value="c/ Narn, 2"
+			type="java.lang.String" />
 	</bean>
 
 </beans>

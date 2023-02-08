@@ -7,15 +7,14 @@ import java.lang.reflect.Method;
 public class Main {
 
 	public static void main(String[] args) 
-			throws ClassNotFoundException,
-			InstantiationException,
-			IllegalAccessException,
-			IllegalArgumentException,
-			InvocationTargetException,
+			throws ClassNotFoundException, 
+			InstantiationException, 
+			IllegalAccessException, 
+			IllegalArgumentException, 
+			InvocationTargetException, 
 			NoSuchMethodException, 
 			SecurityException
-			
-	{
+			{
 		
 		//Instrospection
 		Class<?> helloWorldClass =
@@ -24,22 +23,21 @@ public class Main {
 		
 		// An array of contructors
 		Constructor[] constructors = helloWorldClass.getConstructors();
-		System.out.printf("La clase %s tiene %d constructores", helloWorldClass, constructors.length);
+		System.out.printf("La clase %s tiene %d constructores %n", 
+				helloWorldClass, constructors.length);
 		
 		// Apply newInstance method
-	
 		Object helloWorld = constructors[0].newInstance();
 		System.out.println(helloWorld);
 		
-		Class noparams[] = {};
-		Method method = 
+		Class[] noparams = {};
+		Method method =
 				helloWorldClass.getDeclaredMethod("sayHello", noparams);
 		method.invoke(helloWorld, null);
 		
 		Method method2 =
 				helloWorldClass.getDeclaredMethod("sayHello", String.class);
-		method2.invoke(helloWorld, new String("Java"));
- 
+		method2.invoke(helloWorld, new String("Java"));		
 	}
 
 }

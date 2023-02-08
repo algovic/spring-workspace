@@ -6,18 +6,18 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
 
 	public static void main(String[] args) {
-		AbstractApplicationContext ctx = 
-				new ClassPathXmlApplicationContext("spring-config.xml");
-		Shopping purchase = (Shopping)ctx.getBean(("purchase"));
+		AbstractApplicationContext ctx =
+				new ClassPathXmlApplicationContext(
+						"spring-config.xml");
+		
+		Shopping purchase = (Purchase)ctx.getBean("purchase");
 		System.out.println(purchase);
 		try {
-			purchase.buy(false);
-			
+			purchase.buy(true);
 		} catch (Exception e) {
-			System.out.println("Purchase error. Try again later...");
+			// TODO Auto-generated catch block
+			System.err.println("Purchase error. Try again later...");
 		}
 		ctx.close();
-
 	}
-
 }

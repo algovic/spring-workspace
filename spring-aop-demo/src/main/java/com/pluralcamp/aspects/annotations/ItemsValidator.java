@@ -10,22 +10,23 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class ItemsValidator {
 
-	// Antes
+	//antes
 	@Before("execution(* com.pluralcamp.aspects.annotations.Purchase.buy(..))")
 	public void checkAmount() {
-		System.out.println("Comprobando que " + "la cantidad de items sea correcta.");
-
+		System.out.println("Comprobando que "
+				+ "la cantidad de items sea correcta...");
 	}
-
-	// Despues
+	
+	//después
 	@AfterReturning("execution(* com.pluralcamp.aspects.annotations.Purchase.buy(..))")
 	public void pack() {
 		System.out.println("Empaquetando los productos...");
 	}
-
-	// Al lanzar una excepcion
+	
+	//después de lanzar una excepción
 	@AfterThrowing("execution(* com.pluralcamp.aspects.annotations.Purchase.buy(..))")
 	public void fileComplain() {
-		System.out.println("Queja por productos " + "defectuosos.");
+		System.out.println("Queja por productos "
+				+ "defectuosos");
 	}
 }

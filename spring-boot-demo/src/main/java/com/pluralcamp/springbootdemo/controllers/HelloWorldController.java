@@ -7,19 +7,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("HelloWorld")
-public class HelloWorldController {
-	
+public class HelloWorldController {	
+		
 	@GetMapping("/hello")
 	public String helloWorld(
-			@RequestParam(value = "name", defaultValue = "World")
+			@RequestParam(value = "name", defaultValue = "World") 
 			String name,
-			@RequestParam(value = "surname", defaultValue = "!!!")
-			String surname)	{
+			@RequestParam(value = "surname", defaultValue="!!!")
+			String surname) {
 		return "Hello " + name + " " + surname;
-		}
+	}
+	
 	@GetMapping("/morning")
 	public String goodMorning() {
-		return "<h1>Good Morning</h1>";
-	}
-
+		return "<h1>Goog Morning</h1>";
+	}	
 }
